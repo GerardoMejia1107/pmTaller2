@@ -26,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.pdmtaller2.a0104923_GerardoMejia.ui.navigation.AppNavigation
+import com.pdmtaller2.a0104923_GerardoMejia.ui.navigation.Screen
 import com.pdmtaller2.a0104923_GerardoMejia.ui.theme.FoodSpotByGMejíaTheme
 
 class MainActivity : ComponentActivity() {
@@ -42,27 +43,39 @@ class MainActivity : ComponentActivity() {
                             NavigationBar {
                                 Row {
                                     NavigationBarItem(
-                                        icon = { Icon(imageVector = Icons.Filled.List,
-                                            contentDescription
-                                            = "") },
+                                        icon = {
+                                            Icon(
+                                                imageVector = Icons.Filled.List,
+                                                contentDescription
+                                                = ""
+                                            )
+                                        },
                                         selected = false,
-                                        onClick = { }
+                                        onClick = { navController.navigate(Screen.ListsScreen.route) }
                                     )
 
                                     NavigationBarItem(
-                                        icon = { Icon(imageVector = Icons.Filled.Search,
-                                            contentDescription
-                                            = "") },
+                                        icon = {
+                                            Icon(
+                                                imageVector = Icons.Filled.Search,
+                                                contentDescription
+                                                = ""
+                                            )
+                                        },
                                         selected = false,
-                                        onClick = { }
+                                        onClick = {navController.navigate(Screen.SearchScreen.route) }
                                     )
 
                                     NavigationBarItem(
-                                        icon = { Icon(imageVector = Icons.Filled.AccountBox,
-                                            contentDescription
-                                            = "") },
+                                        icon = {
+                                            Icon(
+                                                imageVector = Icons.Filled.AccountBox,
+                                                contentDescription
+                                                = ""
+                                            )
+                                        },
                                         selected = false,
-                                        onClick = { }
+                                        onClick = {navController.navigate(Screen.OrdersScreen.route) }
                                     )
                                 }
                             }
