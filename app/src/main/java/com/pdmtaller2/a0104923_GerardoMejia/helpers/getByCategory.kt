@@ -1,0 +1,1 @@
+package com.pdmtaller2.a0104923_GerardoMejia.helpersimport com.pdmtaller2.a0104923_GerardoMejia.data.Restaurantimport com.pdmtaller2.a0104923_GerardoMejia.data.restaurantsfun getRestaurantsByCategory(category: String): List<Restaurant> {    return restaurants.filter { it.categories.contains(category) }}

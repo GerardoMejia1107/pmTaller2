@@ -1,0 +1,1 @@
+package com.pdmtaller2.a0104923_GerardoMejia.datadata class Restaurant(    val id: Int,    val name: String,    val description: String,    val imgURL: String,    val location: String,    val categories: List<String>,    val menu: List<Dish>)
