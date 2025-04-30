@@ -6,24 +6,17 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
-import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.rememberNavController
 import com.pdmtaller2.a0104923_GerardoMejia.ui.navigation.AppNavigation
 import com.pdmtaller2.a0104923_GerardoMejia.ui.navigation.Screen
@@ -35,19 +28,27 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FoodSpotByGMejíaTheme {
+                val bottomBarColor = Color(0xFF75A47F)
+                val iconsButtomBarColor = Color(0xFFFCFFE0)
                 val navController = rememberNavController()
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                     bottomBar = {
-                        BottomAppBar {
-                            NavigationBar {
+                        BottomAppBar(
+                            containerColor = bottomBarColor,
+                            contentColor = bottomBarColor,
+                        ) {
+                            NavigationBar(
+                                containerColor = bottomBarColor
+                            ) {
                                 Row {
                                     NavigationBarItem(
                                         icon = {
                                             Icon(
                                                 imageVector = Icons.Filled.List,
                                                 contentDescription
-                                                = ""
+                                                = "",
+                                                tint = iconsButtomBarColor
                                             )
                                         },
                                         selected = false,
@@ -59,11 +60,12 @@ class MainActivity : ComponentActivity() {
                                             Icon(
                                                 imageVector = Icons.Filled.Search,
                                                 contentDescription
-                                                = ""
+                                                = "",
+                                                tint = iconsButtomBarColor
                                             )
                                         },
                                         selected = false,
-                                        onClick = {navController.navigate(Screen.SearchScreen.route) }
+                                        onClick = { navController.navigate(Screen.SearchScreen.route) }
                                     )
 
                                     NavigationBarItem(
@@ -71,11 +73,12 @@ class MainActivity : ComponentActivity() {
                                             Icon(
                                                 imageVector = Icons.Filled.AccountBox,
                                                 contentDescription
-                                                = ""
+                                                = "",
+                                                tint = iconsButtomBarColor
                                             )
                                         },
                                         selected = false,
-                                        onClick = {navController.navigate(Screen.OrdersScreen.route) }
+                                        onClick = { navController.navigate(Screen.OrdersScreen.route) }
                                     )
                                 }
                             }
